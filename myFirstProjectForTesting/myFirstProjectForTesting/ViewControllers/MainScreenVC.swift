@@ -45,6 +45,12 @@ class MainScreenVC: UIViewController {
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
+        if resultLabel.text == "You have choosen the option 1" {
+            performSegue(withIdentifier: "goToBlueScreen", sender: self)
+        } else {
+            performSegue(withIdentifier: "goToBlackScreen", sender: self)
+
+        }
     }
 }
 

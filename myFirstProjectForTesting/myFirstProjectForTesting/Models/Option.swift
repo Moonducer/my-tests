@@ -10,10 +10,23 @@ import Foundation
 import UIKit
 
 struct Option {
-    var number : Int!
-    var optionResultTextColor : UIColor
-    var optionBackgroundTextColour: UIColor
+    var optionBackgroundTextColour: UIColor!
+    var optionResultText : String!
+    
+}
+
+/*
+
+
+var option1 : Option {
+    option1.optionResultText : "You have choosen the option 1"
+    option1.optionBackgroundTextColour : UIColor.blue
 }
 
 
+var option2 : Option {
+    option1.optionResultText : "You have choosen the option 2"
+    option1.optionBackgroundTextColour : UIColor.black
+}
 
+ */
