@@ -52,8 +52,15 @@ class MainScreenVC: UIViewController {
 
         }
     }
+    
+    
+    @IBAction func backFromBlue(segue: UIStoryboardSegue){
+        
+}  
+
+    @IBAction func backFromBlack(_ segue: UIStoryboardSegue) {
+    }
+    
 }
-
-
 
 
