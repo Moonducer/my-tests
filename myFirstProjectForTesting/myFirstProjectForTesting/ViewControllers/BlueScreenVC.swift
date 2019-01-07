@@ -10,11 +10,20 @@ import UIKit
 
 class BlueScreenVC: UIViewController {
 
+    var option1 : Option!
+    
+    @IBOutlet weak var explanationBlueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        explanationBlueLabel.text = "Your screen is BLUE as you have choosen the option \(option1.optionName!)"
+        
+        view.backgroundColor = option1.optionBackgroundTextColour
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
@@ -26,5 +35,7 @@ class BlueScreenVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }

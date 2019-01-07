@@ -9,11 +9,23 @@
 import UIKit
 
 class BlackScreenVC: UIViewController {
-
+    
+var option2 : Option!
+    
+   
+    @IBOutlet weak var explanationBlackLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+       explanationBlackLabel.text = "Your screen is BLACK as you have choosen the option \(option2.optionName!)"
+        
+        view.backgroundColor = option2.optionBackgroundTextColour
+ 
     }
     
 

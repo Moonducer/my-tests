@@ -58,7 +58,7 @@ class MainScreenVC: UIViewController {
         } else {
             performSegue(withIdentifier: "goToBlackScreen", sender: self)
 
-        }
+        } 
     }
     
     
@@ -69,6 +69,16 @@ class MainScreenVC: UIViewController {
     @IBAction func backFromBlack(_ segue: UIStoryboardSegue) {
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dataPared = segue.destination as? BlueScreenVC {
+            dataPared.option1 = option1
+        } else if let dataPared = segue.destination as? BlackScreenVC {
+            dataPared.option2 = option2
+        }
+        
+    }
+    
 }
+
 
 
