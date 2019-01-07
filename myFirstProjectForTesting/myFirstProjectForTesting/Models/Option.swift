@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 
 struct Option {
+    var optionName : String!
     var optionBackgroundTextColour: UIColor!
     var optionResultText : String!
     
+    init(optionBackgroundTextColour :UIColor, optionName: String) {
+        self.optionBackgroundTextColour = optionBackgroundTextColour
+        self.optionName = optionName
+        optionResultText = "You have chosen the option: \(optionName)"
+    }
 }
 
 /*

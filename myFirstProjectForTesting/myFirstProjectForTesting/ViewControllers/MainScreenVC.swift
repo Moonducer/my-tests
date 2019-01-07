@@ -9,6 +9,9 @@
 import UIKit
 
 class MainScreenVC: UIViewController {
+    
+    var option1 : Option!
+    var option2 : Option!
 
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -22,30 +25,35 @@ class MainScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        option1 = Option(optionBackgroundTextColour: UIColor.blue,optionName : "1")
+        option2 = Option(optionBackgroundTextColour: UIColor.black,optionName : "2")
     }
+    
+    var choosenOption: String = "0"
 
-    @IBAction func option1Clicked(_ sender: Any) {
-        
-        if resultLabel.backgroundColor != UIColor.blue{
-        resultLabel.text = "You have choosen the option 1"
-        resultLabel.backgroundColor = UIColor.blue
+    func setOption (option : Option){
+        if choosenOption != option.optionName {
+            resultLabel.text = option.optionResultText
+            resultLabel.backgroundColor = option.optionBackgroundTextColour
+            choosenOption = option.optionName
+            
+        }
+        goButton.isHidden = false
         
     }
-        resultLabel.textColor = UIColor.white
-        goButton.isHidden = false
+    
+    @IBAction func option1Clicked(_ sender: Any) {
+        setOption(option: option1)
+        
     }
     @IBAction func option2Clicked(_ sender: Any) {
-        if resultLabel.backgroundColor != UIColor.black {
-         resultLabel.text = "You have choosen the option 2"
-         resultLabel.backgroundColor = UIColor.black
-         resultLabel.textColor = UIColor.white
-        }
-        resultLabel.textColor = UIColor.white
-        goButton.isHidden = false
+        setOption(option: option2)
+         
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
-        if resultLabel.text == "You have choosen the option 1" {
+        if choosenOption == "1"{
             performSegue(withIdentifier: "goToBlueScreen", sender: self)
         } else {
             performSegue(withIdentifier: "goToBlackScreen", sender: self)
